@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-18 10:26+0200\n"
+"POT-Creation-Date: 2022-05-01 16:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,7 +92,9 @@ msgid "Plutôt pas d'accord"
 msgstr "Disagree"
 
 #: survey_app/templates/example_widgets.html:57
-msgid "N'i d'accord ni pas d'accord"
+#, fuzzy
+#| msgid "N'i d'accord ni pas d'accord"
+msgid "Ni d'accord ni pas d'accord"
 msgstr "Neither agree nor disagree"
 
 #: survey_app/templates/example_widgets.html:59
