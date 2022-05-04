@@ -15,5 +15,12 @@ class QuestionAdmin(admin.ModelAdmin, ExportCsvMixin):
     actions = ["export_as_csv"]
 
 
+class ContextAdmin(admin.ModelAdmin, ExportCsvMixin):
+    list_display = ('handle', 'instrument', 'prompt')
+    list_filter = ['instrument', 'prompt', 'handle']
+    actions = ["export_as_csv"]
+
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
+admin.site.register(ContextQuestionnaire, ContextAdmin)
