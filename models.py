@@ -28,10 +28,24 @@ class Question(models.Model):
         return self.__unicode__()
 
 
+class ContextQuestionnaire(models.Model):
+    '''
+        This table allows to store the side pannel info linked to a particular questionnaire
+        - instrument is a pseudo 'foreign key' that linked the context to a questionnaire
+        - handle is the primary key to retrieve the object
+        - prompt is the message to display in the form of title='text'~title2=text
+    '''
+    instrument = models.CharField(max_length=100, null=True)
+    handle = models.CharField(max_length=50, null=True, unique=True)
+    prompt = models.CharField(max_length=200, null=True)
+
+
 class Answer(models.Model):
     participant = models.ForeignKey(ParticipantProfile, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
     session = models.ForeignKey(ExperimentSession, null=True, on_delete=models.DO_NOTHING)
     value = models.CharField(null=True, max_length=100)
     study = models.ForeignKey(Study, null=True, on_delete=models.CASCADE)
+    contextQ = models.ForeignKey(ContextQuestionnaire, null=True, on_delete=models.DO_NOTHING)
     # study = ParticipantProfile.objects.values_list('study')
+
